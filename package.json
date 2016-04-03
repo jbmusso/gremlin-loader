@@ -1,0 +1,43 @@
+{
+  "name": "gremlin-loader",
+  "version": "0.0.1",
+  "description": "A Webpack loader for Gremlin Groovy files",
+  "main": "lib/loader.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "babel ./src -d lib",
+    "build:watch": "npm run build -- --watch",
+    "test": "mocha ./test --compilers js:babel-register --recursive --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbmusso/gremlin-loader.git"
+  },
+  "keywords": [
+    "gremlin",
+    "webpack",
+    "loader",
+    "graphs",
+    "tinkerpop",
+    "groovy",
+    "query"
+  ],
+  "author": "Jean-Baptiste Musso <jbmusso+github.com@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbmusso/gremlin-loader/issues"
+  },
+  "homepage": "https://github.com/jbmusso/gremlin-loader#readme",
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-preset-node5": "^11.0.1",
+    "babel-register": "^6.7.2",
+    "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "loader-utils": "^0.2.13",
+    "lodash": "^4.7.0"
+  }
+}
