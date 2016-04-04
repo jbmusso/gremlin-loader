@@ -3,6 +3,11 @@
 A Gremlin (Groovy) webpack loader.
 
 `gremlin-loader` allows you to define Gremlin queries in Groovy files and load them within your Node.js environment as JavaScript functions.
+Think about Webpack [css-loader](https://github.com/webpack/css-loader) in module mode, but for loading Groovy files instead of CSS flles.
+
+The loader returns an `Object` where `keys` are names of all the functions found in the parsed file and `values` are JavaScript functions that, when called, return an `Object` with two properties:
+* `bindings`: an `Object` where `keys` are argument names of the function as defined in the Groovy file and `values` are all values passed when calling the JavaScript function
+* `gremlin`: the full string representation of the function as defined in the Groovy file, with an extra line appended responsible for immediately calling that Groovy function with the above `bindings` when sent to Gremlin Server for execution
 
 This loader is meant to be used server-side with [babel-plugin-webpack-loaders](https://github.com/istarkov/babel-plugin-webpack-loaders).
 
@@ -11,7 +16,7 @@ This is highly experimental and shouldn't be used in production.
 ## Installation
 
 ```shell
-npm install gremlin-loader --save
+npm install gremlin-loader babel-plugin-webpack-loaders --save
 ```
 
 To make `babel-plugin-webpack-loaders` work, your `.babelrc` file should resemble the following:
