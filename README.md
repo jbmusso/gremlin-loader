@@ -87,3 +87,11 @@ client.execute(query, (err, results) => {
   // handle err or results
 });
 ```
+
+### Benefits
+- full reusability of your Gremlin queries: anything you write in `.gremlin` (or `.groovy`) files is valid Gremlin-Groovy and can be copy/pasted in the Gremlin console or used in any other application
+- automatic parameter bindings with explicit names by extracting the function signature, for better Gremlin server performance (no query recompilation) and security (no injection)
+- you do not have to write/escape fat strings of Gremlin in your application, and you also get proper syntax highlighting for free in your IDE (because Gremlin is just Groovy)
+- automatic reloading of your Node.js application on `.gremlin` file change
+
+
